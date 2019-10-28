@@ -1,0 +1,35 @@
+<!-- templates/home.html -->
+{% extends 'CAPAPPv1/ALog/base.html' %}
+
+{% block title %}Bookings{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+        <h1></br></br>Hi {{ user.username }}! </br></br></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+{% else %}
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+        <h1></br></br>You are not logged in</br></br></h1>
+        <h2><a href="{% url 'login' %}">login</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+{% endif %}
+{% endblock %}
