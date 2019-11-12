@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
 
 class User(AbstractUser):
@@ -35,6 +36,8 @@ class Student(models.Model):
         blank=True,
         on_delete=models.CASCADE,
         null=True)
+    reserved_start_date = models.DateTimeField(default=timezone.now)
+    reserved_end_date = models.DateTimeField()
     room_allotted = models.BooleanField(default=False)
     no_dues = models.BooleanField(default=True)
 
@@ -49,6 +52,8 @@ class Room(models.Model):
     room_type = models.CharField(choices=room_choice, max_length=1, default=None)
     vacant = models.BooleanField(default=False)
     hostel = models.ForeignKey('Hostel', on_delete=models.CASCADE)
+    # reserved_start_date = models.DateTimeField(default=timezone.now)
+    # reserved_end_date = models.DateTimeField()
 
     def __str__(self):
         return self.name
