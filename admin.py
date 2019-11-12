@@ -13,6 +13,8 @@ class StudentAdmin(admin.ModelAdmin):
         'course',
         'dob',
         'room',
+        'reserved_start_date',
+        'reserved_end_date',
         'room_allotted']
 
 

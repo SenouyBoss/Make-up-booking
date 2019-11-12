@@ -36,16 +36,22 @@ class StudentDetailsForm(forms.ModelForm):
             'student_name',
             'father_name',
             'enrollment_no',
-            'course',
             'dob',
             'gender',
-            'room']
+            'course',
+            'room',
+            'reserved_start_date',
+            'reserved_end_date'
+        ]
 
 
 class SelectionForm(forms.ModelForm):
     class Meta:
         model = Student
-        fields = ['room']
+        fields = ['room',
+                  'reserved_start_date',
+                  'reserved_end_date'
+                  ]
 
 
 class DuesForm(forms.Form):
