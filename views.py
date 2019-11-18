@@ -144,7 +144,7 @@ def select(request):
             student = request.user.student
             send_mail(
                 'Make up notification',
-                'you have a new reservation under ' + str(request.user.student.student_name) + ' with the following details: \n Room name: ' +
+                'you have a new reservation with the following details: \n Holder: ' + str(request.user.student.student_name) + '  \n Room name: ' +
                 str(request.user.student.room) + '\n for the following course: ' + str(request.user.student.course) + '\n And from \n' + request.user.student.reserved_start_date.strftime("%m/%d/%Y, %H:%M:%S") + '\n to \n'
                 + request.user.student.reserved_end_date.strftime("%m/%d/%Y, %H:%M:%S") + '',
                 'y.abouljid@aui.ma',
