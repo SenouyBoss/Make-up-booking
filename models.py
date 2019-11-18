@@ -37,7 +37,7 @@ class Student(models.Model):
         on_delete=models.CASCADE,
         null=True)
     reserved_start_date = models.DateTimeField(default=timezone.now)
-    reserved_end_date = models.DateTimeField()
+    reserved_end_date = models.DateTimeField(default=timezone.now)
     room_allotted = models.BooleanField(default=False)
     no_dues = models.BooleanField(default=True)
 
