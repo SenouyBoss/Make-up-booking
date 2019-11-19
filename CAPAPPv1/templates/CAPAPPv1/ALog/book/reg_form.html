@@ -9,3 +9,8 @@
     </form>
   </div>
 {% endblock content %}
+
+{% block more_links %}
+    <a href="{% url 'login2' %}">Login</a>
+    <a href="{% url 'home' %}">Register</a>
+{% endblock more_links %}
