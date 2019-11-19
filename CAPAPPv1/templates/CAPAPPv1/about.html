@@ -1,63 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'CAPAPPv1/ALog/book/base.html' %}
+{% load static %}
 
-<head>
+{% block content %}
+<h3> </h3>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>AUI - Make-ups</title>
+<div id="img">
+    <img src="{% static 'CAPAPPv1/media/AUI-Logo-300x150.png' %}" class="img-fluid" alt="" >
 
+  </div>
+<h2> This new platform is designed for professors   </h2>
+<h2> To help minimize the hassle of going  </h2>
+<h2> Through the reservation </h2>
+<h2> Of classes from the comfort of their houses </br> </br> </h2>
+<h2> Are you a Professor ? </h2>
+<h2> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'login2' %}"> Log In </a> </h2> 
 
-
-  <!-- Custom fonts for this template -->
-
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
+{% endblock content %}
 
 
-</head>
+{% block more_links %}
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="{% url 'home' %}">login</a>
 
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}">Welcome to new AUI Platform</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'about' %}">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'contact' %}">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
- <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100">
-        <div class="col-lg-7 my-auto">
-          <div class="header-content mx-auto">
-        <h1></br></br></br>ABOUT PAGE</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-</header>
-</body>
-</html>
+{% endblock more_links %}
