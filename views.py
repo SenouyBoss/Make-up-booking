@@ -3,9 +3,9 @@ from django.http import HttpResponse
 # Create your views here.
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-from .forms import UserForm, RegistrationForm, LoginForm, SelectionForm, DuesForm, NoDuesForm, StudentDetailsForm
+from .forms import UserForm, RegistrationForm, LoginForm, SelectionForm, DuesForm, NoDuesForm, StudentDetailsForm, ContactForm
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from .models import Student, Room, Hostel
+from .models import Student, Room, Hostel, Contact
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
@@ -14,6 +14,17 @@ from django.core.mail import send_mail
 def home(request):
     return render(request, 'CAPAPPv1/ALog/book/home.html')
 
+# def contact(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             subject = 'New Inquiry'
+#             message = 'Mr. ' + str(request.name) + 'with the following email: \n' + str(request.email) + '\n have the following question: \n' + str(request.message) + '\n'
+#             send_mail(subject, message, str(request.email), ['registrarstest@gmail.com']),
+#     else:
+#         form = ContactForm()
+#         args = {'form': form}
+#         return render(request, 'CAPAPPv1/ALog/book/contact.html', args)
 
 def register(request):
     if request.method == 'POST':
@@ -324,17 +335,39 @@ def change_student_details(request, enrollment_no):
 #
 #     return render(request, 'CAPAPPv1/ALog/book/simple_book.html')
 
+
 def funtest(request):
     return render(request, 'CAPAPPv1/index.html')
+
 
 def aboutfun(request):
     return render(request, 'CAPAPPv1/about.html')
 
+
 def contactfun(request):
-    return render(request, 'CAPAPPv1/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # process form data
+            obj = Contact()  # gets new object
+            obj.name = form.cleaned_data['name']
+            obj.email = form.cleaned_data['email']
+            obj.message = form.cleaned_data['message']
+            # finally save the object in db
+            obj.save()
+            subject = 'New Inquiry'
+            message = 'Mr. ' + str(obj.name) + ' with the following email: \n' + str(obj.email) + '\n have the following question: \n' + str(obj.message) + '\n'
+            send_mail(subject, message, 'y.abouljid@aui.ma', ['registrarstest@gmail.com'], fail_silently=False,)
+            return render(request, 'CAPAPPv1/contact.html')
+    else:
+        form = ContactForm()
+        args = {'form': form}
+        return render(request, 'CAPAPPv1/contact.html', args)
+
 
 def loginfun(request):
     return render(request, 'registration/login.html')
+
 
 def homefun(request):
     return render(request, 'CAPAPPv1/ALog/home.html')

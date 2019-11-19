@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import Student, Course, Room, User
+from .models import Student, Course, Room, User, Contact
 from django import forms
 
 
@@ -27,6 +27,18 @@ class RegistrationForm(forms.ModelForm):
             'course',
             'dob',
             'gender']
+############################################################
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = [
+            'name',
+            'email',
+            'message'
+        ]
+#############################################################
 
 
 class StudentDetailsForm(forms.ModelForm):
