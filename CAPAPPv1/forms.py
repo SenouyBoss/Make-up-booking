@@ -27,8 +27,7 @@ class RegistrationForm(forms.ModelForm):
             'course',
             'dob',
             'gender']
-############################################################
-
+        
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -38,7 +37,6 @@ class ContactForm(forms.ModelForm):
             'email',
             'message'
         ]
-#############################################################
 
 
 class StudentDetailsForm(forms.ModelForm):
