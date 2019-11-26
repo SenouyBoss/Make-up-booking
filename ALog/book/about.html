@@ -1,0 +1,44 @@
+{% extends 'CAPAPPv1/ALog/book/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <h3> </h3>
+
+<div id="img">
+    <img src="{% static 'CAPAPPv1/media/AUI-Logo-300x150.png' %}" class="img-fluid" alt="" >
+
+  </div>
+<h2> This new platform is designed for professors   </h2>
+<h2> To help minimize the hassle of going  </h2>
+<h2> Through the reservation </h2>
+<h2> Of classes from the comfort of their houses </br> </br> </h2>
+<h2> Are you a Professor ? </h2>
+<h2> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'login2' %}"> Log In </a> </h2>  -->
+
+<div class="container" id="fname" style="background: linear-gradient(#D2B48C, #FFFFFF)">
+
+          <h1 style="text-align: center; display: block">About The App</h1>
+
+</div>
+      <section class="features" id="features">
+    <div class="container" style="background: linear-gradient(#D2B48C, #FFFFFF)">
+      <div class="section-heading text-center">
+        <h3> This new platform is designed for professors   </h3>
+        <h3> To help minimize the hassle of going  </h3>
+        <h3> Through the reservation </h3>
+        <h3> Of classes from the comfort of their houses </h3>
+        <hr>
+      </div>
+           <img src="{% static 'CAPAPPv1/media/AUI-Logo-300x150.png' %}"  style="margin-left: 37%" alt="" >      
+</div>
+</section>
+
+
+
+{% endblock content %}
+
+{% block more_links %}
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="{% url 'home' %}">login</a>
+{% endblock more_links %}

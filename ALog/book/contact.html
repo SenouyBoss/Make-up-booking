@@ -1,0 +1,54 @@
+{% extends 'CAPAPPv1/ALog/book/base.html' %}
+{% load static %}
+
+{% block content %}
+<h3>  </h3>
+
+<div id="img">
+</br> </br></br>
+    <img src="{% static 'CAPAPPv1/media/AUI-Logo-300x150.png' %}" class="img-fluid" alt="" >
+
+  </div>
+<h2 id="margin"> In case of Enquiries please contact our numbers  </h2>
+<h3 id="margin">Main Campus, Building 1</br>
+Office hours : 8:30 a.m. - 5:30 p.m.</br>
+Office phone : (+212)-535-862-074.</br>
+e.akhabaz@aui.ma  </br>
+</h3>
+<h2 id="margin"> Still Have a question ? </h2>
+
+<div class="container" style="background: linear-gradient(#D2B48C, #FFFFFF)">
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <label for="fname">Full Name</label>
+    <div id="fname"> {{ form.name }} </div>
+
+    <label for="fname">Email</label>
+    <div id="fname"> {{ form.email }} </div>
+
+    <label for="subject">Subject</label>
+    <div id="fname"> {{ form.message }} </div>
+
+    <input class="button-custom" type="submit" value="DONE">
+
+  </form>
+</div>
+<!-- ////////////////////////////////
+<form action="" method="post">
+        {% csrf_token %}
+      <div class="fields"> <h3>Full Name {{ form.name }} </h3> </div>
+      <div class="fields"><h3> email {{ form.email }} </h3></div>
+      <div class="fields"><h3> message {{ form.message }} </h3></div>
+      <div> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.as_p }}</div>
+      <input class="button-custom" type="submit" value="DONE">
+</form> -->
+
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="{% url 'home' %}">login</a>
+{% endblock more_links %}

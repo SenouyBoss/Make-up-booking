@@ -1,0 +1,41 @@
+{% extends 'CAPAPPv1/ALog/book/base.html' %}
+{% load static %}
+
+{% block content %}
+<h3> </h3>
+
+<div >
+    
+    <!-- Slideshow container -->
+
+
+
+  
+    <div id="bg">
+    <img src="{% static 'CAPAPPv1/media/1_3OrqR4oeK3n0-gHpOIErfg.jpeg' %}" >
+    </div>
+    <div style="font-size: large" class="text"><a class="button-custom" href="{% url 'home' %}">
+        
+        Get Started
+        
+    </a>
+  
+  
+
+  <!-- Next and previous buttons -->
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+
+
+
+
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+{% endblock more_links %}
